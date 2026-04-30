@@ -1,5 +1,6 @@
 # Shells
 
+## Powershell
 powershell oneliner with base64
 
 ```bash
@@ -11,3 +12,5 @@ PS> $Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text)
 ```
 PS> $EncodedText =[Convert]::ToBase64String($Bytes)
 ```
+
+## PHP
