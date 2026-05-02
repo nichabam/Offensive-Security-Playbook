@@ -1,25 +1,17 @@
 # SQL Enumeration Cheat Sheet (MySQL & MSSQL)
 ## Connecting to remote DB
 ### MySQL
-```
-mysql -u <username> -p'<password>' -h <ip> -P <port> --skip-ssl-verify-server-cert
-```
+```mysql -u <username> -p'<password>' -h <ip> -P <port> --skip-ssl-verify-server-cert```
 
 ### MSSQL
-```
-impacket-mssqlclient <username>:<password>@<ip> -windows-auth 
-```
+```impacket-mssqlclient <username>:<password>@<ip> -windows-auth ```
 
 ## 1. Show Databases
 ### MySQL
-```
-SHOW DATABASES;
-```
+```SHOW DATABASES;```
 
 ### MSSQL
-```
-SELECT name FROM sys.databases;
-```
+```SELECT name FROM sys.databases;```
 
 ## 2. Show Tables within a database
 ### MySQL
