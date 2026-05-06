@@ -6,7 +6,7 @@ Prioritize breadth and get as much information on the target as possible before 
 
 Enumerate all technologies and versions. Don't rush like it's a CTF
 
-Rough methodology:
+## Rough methodology
 - Upon identifying a host:
     - nmap to enumerate ports
 
