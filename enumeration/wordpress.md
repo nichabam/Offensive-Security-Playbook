@@ -12,7 +12,7 @@ wpscan -h for more options
 
 - Check plugins for outdated versions that may be vulnerable
 
-# Misconfigured Directories
+# WordPress Directories
 
 Sometimes directory busting may reveal these directories which indicates Wordpress as the underlying CMS.
 ```
