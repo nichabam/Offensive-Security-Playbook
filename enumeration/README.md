@@ -9,6 +9,7 @@ Enumerate all technologies and versions. Don't rush like it's a CTF
 Rough methodology:
 - Upon identifying a host:
     - nmap to enumerate ports
+
 - Web (HTTP[s])
     - Directory Busting
     - Web components (Wappalyzer)
@@ -19,8 +20,12 @@ Rough methodology:
         - Injection (SQLi, Command)
         - File uploads
         - LFI, RFI
+
 - SMB
     - Anonymous
+
 - SNMP
+
 - FTP
+
 - More...
