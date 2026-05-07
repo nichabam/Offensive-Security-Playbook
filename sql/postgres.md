@@ -30,6 +30,15 @@ current_database()
 
 ```psql -h <ip> -U <username> -d <database>```
 
+**backslash commands**
+```
+\l          -> list databases
+\c db       -> connect to database
+\dt         -> list tables
+\d table    -> describe table
+\q          -> quit
+```
+
 default databases:
 
 - postgres
