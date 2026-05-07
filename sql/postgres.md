@@ -1,6 +1,28 @@
 # PostgreSQL
 PostgreSQL notes
 
+### Strucutre
+
+```
+Database -> Schema -> Table -> Column
+```
+
+### Common Schemas
+
+```
+public              -> Application tables
+pg_catalog          -> System tables
+information_schema  -> metadata
+```
+
+### Useful functions
+
+```
+version()
+current_user
+current_database()
+```
+
 ## psql
 
 **Connecting** 
