@@ -62,6 +62,9 @@ SELECT pg_read_file('/tmp/out.txt', 0, 1000);
 
 ## postgresql injection
 
+### UNION-Based
+\#TODO
+
 ### Error-Based
 
 When only errors are reflected and 1 string can be leaked at a time
@@ -135,3 +138,7 @@ hashcat -m 10 'ae8c67affdb169a42c9631c02fc67ede:rubben' /usr/share/wordlists/roc
 ```
 
 *rubben is the username*
+
+### Time-Based
+
+\#TODO
