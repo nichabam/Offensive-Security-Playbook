@@ -11,6 +11,18 @@ hydra -l <username> -P <wordlist path> <protocol>://<ip>
 ```-p``` : for one password
 ```-P``` : for a list of passwords (wordlists)
 
+thread limit
+
+```-T1``` : limits to one thread. Use for:
+- RDP
+- SSH
+- SMB
+- winRM
+
+HTTP are usually fine with high threads.
+
+```-I``` : ignore previous sessions
+
 ## HTTP
 
 Login POST request form
