@@ -124,3 +124,54 @@ For complex patterns, use
 ```
 | Where-Object { $_.Name -match "REGEX HERE" }
 ```
+
+### Windows Services
+
+Get services
+
+```
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName
+```
+
+To get only running services
+
+```
+| Where-Object { $_.State -match 'Running' }
+```
+
+To filter out Windows\system32
+
+```
+| Where-Object { $_.PathName -notmatch 'Windows' }
+```
+
+Check permissions on path
+
+```
+icacls "path"
+```
+
+Unquoted services
+
+```
+wmic service get name,pathname |  findstr /i /v "C:\Windows\\" | findstr /i /v """
+```
+
+### Scheduled Tasks
+
+To query all
+
+```
+schtasks /query /fo LIST /v
+```
+
+scheduled tasks that are not by microsoft
+
+```
+Get-ScheduledTask | Select-Object TaskName, TaskPath, Author |  Where-Object { $_.Author -notmatch 'Microsoft' }
+```
+
+Get next run time with Get-ScheduledTaskInfo
+```
+Get-ScheduledTaskInfo <TaskPath>\<TaskName>
+```
