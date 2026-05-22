@@ -129,3 +129,15 @@ Convert-SidToName <sid>
 
 <sid>, <sid2>, .. | Convert-SidToName
 ```
+
+## Shares
+
+```
+Find-DomainShare
+```
+
+Inspect share
+
+```
+dir "\\ComputerName\ShareName\"
+```
