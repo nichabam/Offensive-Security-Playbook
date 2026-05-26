@@ -42,3 +42,9 @@ New-PSSession -ComputerName 192.168.50.73 -Credential $credential
 
 Enter-PSSession 1
 ```
+
+# PsExec
+
+```
+.\PsExec64.exe -i \\hostname -u domain\username -p password cmd
+```
