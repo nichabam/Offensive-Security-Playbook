@@ -105,3 +105,31 @@ su root2
 ## sudo - superuser stuff
 
 ```sudo -l```
+
+Add user to sudoers
+```
+
+```
+
+## Disk group
+
+If a user is in disk group, there may be a chance to read sensitive files and prives
+
+Check:
+```
+$id
+uid=1000(dora) gid=1000(dora) groups=1000(dora),6(disk)
+
+$groups
+dora disk
+```
+
+Find filesystem mounted on /
+```
+df -h
+```
+
+Access filesystem
+```
+debugfs <filesystem>
+```
