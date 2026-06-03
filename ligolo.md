@@ -38,6 +38,12 @@ Back in ligolo-ng cli
 start
 ```
 
+## Listener
+
+```
+listener_add --addr 0.0.0.0:port --to 0.0.0.0:port
+```
+
 ## Shutting down
 
 Remove routing from routing table
