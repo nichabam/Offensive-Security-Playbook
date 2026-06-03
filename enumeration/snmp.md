@@ -57,3 +57,12 @@ snmpwalk -On -v2c -c public -t 2 -r 1 <IP> 1.3.6.1.2.1.25.2.3
 # Net-SNMP extend scripts/output — VERY IMPORTANT
 snmpwalk -On -v2c -c public -t 2 -r 1 <IP> 1.3.6.1.4.1.8072.1.3.2
 ```
+
+Windows
+```
+# Users
+snmpwalk -On -v2c -c public -t 2 -r 1 <IP> 1.3.6.1.4.1.77.1.2.25
+
+# Shares
+snmpwalk -On -v2c -c public -t 2 -r 1 <IP> 1.3.6.1.4.1.77.1.2.27
+```
