@@ -98,3 +98,8 @@ Use reverse port forwarding, then browse it from Kali:
 
 curl http://127.0.0.1:8000
 ```
+
+Local service with valid creds
+```
+ssh -L <LOCAL_PORT>:localhost:<REMOTE_PORT> user@<TARGET_IP>
+```
