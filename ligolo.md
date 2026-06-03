@@ -63,3 +63,38 @@ Remove interface
 ```
 sudo ip link delete ligolo
 ```
+
+# SSH Port Forwarding
+
+```
+SSH Port Forwarding / Tunneling Notes
+
+Command example:
+ssh -f -N -R 8000:localhost:8000 kali@192.168.45.187
+
+Breakdown:
+ssh                  Start SSH connection
+-f                   Send SSH to background after authentication
+-N                   Do not run a remote command, only forward ports
+-R                   Reverse port forward
+8000:localhost:8000  Forward remote port 8000 to local localhost:8000
+kali@192.168.45.187  SSH into Kali as user kali
+
+Meaning:
+From the target, connect back to Kali over SSH.
+Open port 8000 on Kali.
+Anything hitting Kali:8000 gets forwarded through SSH to target:localhost:8000.
+
+So this:
+ssh -f -N -R 8000:localhost:8000 kali@192.168.45.187
+
+Means:
+Kali 127.0.0.1:8000  -->  target 127.0.0.1:8000
+
+Use case:
+The target has a service only listening locally, e.g. 127.0.0.1:8000.
+You cannot access it directly from Kali.
+Use reverse port forwarding, then browse it from Kali:
+
+curl http://127.0.0.1:8000
+```
