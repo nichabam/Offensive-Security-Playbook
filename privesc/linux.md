@@ -111,6 +111,8 @@ Add user to sudoers
 echo '<user> ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers.d/<user>
 
 chmod 440 /etc/sudoers.d/<user>
+
+echo '<user> ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
 ```
 
 ## Disk group
