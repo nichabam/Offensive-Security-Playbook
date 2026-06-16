@@ -43,7 +43,7 @@ ipconfig /all
 route print
 
 # Active network connections
-netstat
+netstat -ano | findstr LISTENING
 ```
 
 Applications
