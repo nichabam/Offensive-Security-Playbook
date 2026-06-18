@@ -175,3 +175,29 @@ Get next run time with Get-ScheduledTaskInfo
 ```
 Get-ScheduledTaskInfo <TaskPath>\<TaskName>
 ```
+
+# Spawning admin shell
+
+## Non interactive
+
+### schtasks method
+Create scheduled task
+```
+schtasks /create /tn "adminshell" /tr "C:\path to shell.exe" /ru hostname\admin2 /rp password1 /rl highest /sc once /st 00:00
+```
+
+Run scheduled task
+```
+schtasks /run /tn "adminshell"
+```
+
+## Interactive
+Runas
+```
+runas /user:domain\admin2 "cmd.exe"
+```
+
+Win + R shortcut
+```
+Start-Process powershell -Verb RunAs
+```
