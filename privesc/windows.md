@@ -33,6 +33,11 @@ Get-LocalGroupMember <group name>
 systeminfo
 ```
 
+Security Patches
+```
+wmic qfe list
+```
+
 Network information
 
 ```
