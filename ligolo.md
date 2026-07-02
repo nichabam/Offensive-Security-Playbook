@@ -26,7 +26,7 @@ In ligolo-ng cli
 session <session number>
 ```
 
-In another terminal
+In another terminal ( If adding an internal network )
 
 ```
 sudo ip route add <network>/24 dev ligolo
@@ -62,6 +62,12 @@ Remove interface
 
 ```
 sudo ip link delete ligolo
+```
+
+## Ligolo port forwarding
+
+```
+sudo ip route add 240.0.0.1/32 dev ligolo
 ```
 
 # SSH Port Forwarding
