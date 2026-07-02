@@ -46,3 +46,10 @@ Windows
 certutil -hashfile SAM SHA256
 certutil -hashfile SAM MD5
 ```
+
+# Kali Stuff
+
+vmware shared folder
+```
+sudo vmhgfs-fuse .host:/vmware-shared-folder /mnt/hgfs/shared -o allow_other -o uid=1000
+```
