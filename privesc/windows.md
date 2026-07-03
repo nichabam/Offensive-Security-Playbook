@@ -1,5 +1,30 @@
 # Enumeration
 
+## Scripts
+
+PowerUp.ps1
+```
+Import-Module .\PowerUp.ps1
+
+Invoke-AllChecks
+```
+
+PrivescCheck.ps1
+```
+Import-Module .\PrivescCheck.ps1
+
+Invoke-PrivescCheck -Report priv -Format TXT
+
+# or
+
+Invoke-PrivescCheck > privesccheck.log
+```
+
+WinPEAS
+```
+.\WinPEASx64.exe
+```
+
 ## Powershell
 
 ### Users and Groups
